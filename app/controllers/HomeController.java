@@ -1,5 +1,7 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
 import play.mvc.*;
 
 /**
@@ -15,6 +17,10 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok("Your new application is ready.");
+        JsonNode jsonNode = Json.parse("{\n" +
+                "  \"content\": \"Your New Application\"\n" +
+                "}");
+
+        return ok(jsonNode).as("application/json");
     }
 }
