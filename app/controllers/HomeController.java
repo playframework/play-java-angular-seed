@@ -18,7 +18,7 @@ public class HomeController extends Controller {
      */
     public Result index() {
         JsonNode jsonNode = Json.parse("{\n" +
-                "  \"content\": \"Your New Application\"\n" +
+                "  \"content\": \"Java Play Angular Seed\"\n" +
                 "}");
 
         return ok(jsonNode).as("application/json");
