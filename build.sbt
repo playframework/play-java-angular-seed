@@ -1,4 +1,4 @@
-name := """pjava-play-angular-seed"""
+name := """java-play-angular-seed"""
 
 version := "1.0-SNAPSHOT"
 
