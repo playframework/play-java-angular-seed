@@ -136,6 +136,13 @@ GET        /summary         controllers.HomeController.appSummary()
 
 * The below service is there in the front-end to manage the http requests which defined in the backend service.
 
+```
+├── /ui/      
+│     └── src 
+│          └── app 
+│               └── app.service.ts 
+```
+
 ```javascript
 @Injectable()
 export class AppService {
