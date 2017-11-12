@@ -39,6 +39,8 @@ Run `ng build-dev` to execute the development build task. The will generate the 
 Run `ng build-prod` to execute the production build task. The will generate the output with ahead of time compilation support 
 inside `public/ui/` folder in the root level.
 
+- Apart from the above listed tasks you can also define your own task under scripts section of the package.json.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
