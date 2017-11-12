@@ -2,9 +2,9 @@
 
 # :copyright: java-play-angular-seed
 
-Java Play 2.6.x + Angular 5 with Angular CLI seed project with full-fledged build process
+> Java Play 2.6.x + Angular 5 with Angular CLI seed project with full-fledged build process
 
-## :sparkles: Running
+## Running
 
 Run this using [sbt](http://www.scala-sbt.org/).
 
@@ -12,12 +12,12 @@ Run this using [sbt](http://www.scala-sbt.org/).
 sbt run
 ```
 
-And then go to http://localhost:4200 to see the running web application.
+Frontend build steps: [UI README.md](./ui/README.md)
 
-## :sparkles: Complete Directory Layout
+## Complete Directory Layout
 
 ```
-├── /app/                       # The backend(java) application sources(controllers, models, views, assets)
+├── /app/                       # The backend (java) application sources (controllers, models, views, assets)
 ├── /conf/                      # Configurations files and other non-compiled resources (on classpath)
 │     ├── application.conf      # Builds the project from source to output(lib and bower) folder
 │     ├── logback.xml           # Logging configuration
@@ -25,28 +25,36 @@ And then go to http://localhost:4200 to see the running web application.
 ├── /logs/                      # Logs folder
 │     └── application.log       # Default log file
 ├── /project/                   # Sbt configuration files
-│     ├── AngularBuild          # PlayRunHook file to trigger angular serve with sbt run
+│     ├── **AngularBuild**      # PlayRunHook file to trigger angular serve with sbt run
 │     ├── build.properties      # Marker for sbt project 
 │     └── plugins.sbt           # Sbt plugins declaration
 ├── /public/                    # Public assets
 │     └── /ui/                  # Frontend build assests
-├── /sbt-dist/                  # 
-│     ├── bin                   # 
-│     └── conf                  # 
 ├── /target/                    # Generated stuff
 │     ├── /universal/           # Application packaging
 │     └── /web/                 # Compiled web assets
 ├── /ui/                        # Angular front end sources
+│     ├── /e2e/                 # End to end tests folder
+│     ├── /node_modules/        # 3rd-party frontend libraries and utilities
+│     ├── /src/                 # The frontend source code (modules, componensts, models, directives, services etc.) of the application
+│     ├── angular-cli.json      # Builds the project from source to output(lib and bower) folder
+│     ├── .editorconfig         # Define and maintain consistent coding styles between different editors and IDEs
+│     ├── .gitignore            # Contains ui files to be ignored when pushing to git
+│     ├── karma.conf.js         # Karma configuration file
+│     ├── package.json          # Holds various metadata configuration relevant to the ui
+│     ├── protractor.conf.js    # Protractor configuration file
+│     ├── proxy.conf.json       # UI proxy configuration
+│     ├── README.md             # Contains all user guide details for the ui
+│     ├── tsconfig.json         # Contains typescript compiler options
+│     └── tslint.json           # Lint rules for the ui
 ├── .gitignore                  # Contains files to be ignored when pushing to git
 ├── build.sbt                   # Play application build script
 ├── LICENSE                     # Contains License Agreement file
 ├── README.md                   # Contains all user guide details for the application
-├── sbt                         # 
-├── sbt.bat                     # SBT launcher script
-└── ui-build.sbt                # UI build scripts
+└── **ui-build.sbt**            # UI build scripts
 ```
 
-## :sparkles: Controllers
+## Controllers
 
 There are several demonstration files available in this template.
 
@@ -54,9 +62,12 @@ There are several demonstration files available in this template.
 
   Shows how to handle simple HTTP requests.
 
-## :sparkles: Components
+## Components
 
 - Module.java:
 
   Shows how to use Guice to bind all the components needed by your application.
 
+## License
+
+This software is licensed under the MIT license
