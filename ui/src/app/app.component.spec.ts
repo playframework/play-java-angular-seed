@@ -8,7 +8,7 @@ import 'rxjs/add/observable/of';
 class FakeAppService extends AppService {
   getWelcomeMessage() {
     return Observable.of({
-      content: 'Java Play Angular Seed'
+      content: 'Test content'
     });
   }
 }
@@ -38,12 +38,12 @@ describe('AppComponent', () => {
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Java Play Angular Seed');
+    expect(app.title).toEqual('Test content');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Java Play Angular Seed!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Test content!');
   }));
 });

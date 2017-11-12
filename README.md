@@ -117,6 +117,19 @@ There are several demonstration files available in this template.
 - HomeController.java:
 
   Shows how to handle simple HTTP requests.
+  
+## Routes
+
+All the route definitions should be included in this file based on higher priority first. In this example project following route is added to retrieve the summary.
+
+```
+GET        /summary         controllers.HomeController.appSummary()
+```
+
+```
+├── /conf/      
+│     └── routes 
+```
 
 ## Components
 
