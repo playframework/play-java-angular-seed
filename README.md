@@ -1,10 +1,8 @@
 [![MIT License][license-badge]][LICENSE]
 
-# :copyright: java-play-angular-seed
+# java-play-angular-seed
 
 > java-play-angular-seed project illustrates how Play Framework can be used to develop backend/services along with Angular to develop the front-end/ui. 
-
-> This is a totally integrated Java Play 2.6.x + Angular 5 with Angular CLI seed project with full-fledged build process.
 
 ## Used Versions
 
@@ -113,14 +111,6 @@
 ├── /ui/                       
 │     ├── proxy.conf.json          
 ```
-
-## Controllers
-
-There are several demonstration files available in this template.
-
-- HomeController.java:
-
-  Shows how to handle simple HTTP requests.
   
 ## Routes
 
@@ -129,44 +119,13 @@ There are several demonstration files available in this template.
 │     ├── routes 
 ```
 
-* All the route definitions should be included in this file based on higher priority first. In this example project following route is added to retrieve the summary.
+* The following route configuration allows to map front end index.html to index route. This should be placed as the first route in this file.
 
 ```
-GET        /summary         controllers.HomeController.appSummary()
+GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
 ```
 
-* The below service is there in the front-end to manage the http requests which defined in the backend service.
-
-```
-├── /ui/      
-│     ├── /src/ 
-│     │     ├── /app/ 
-│     │     │     ├── app.service.ts 
-```
-
-```javascript
-@Injectable()
-export class AppService {
-  private serviceUrl = '/summary';
-
-  constructor(private http: HttpClient) {
-  }
-
-  /**
-   * Makes a http get request to retrieve the welcome message from the backend service.
-   */
-  public getWelcomeMessage() {
-    return this.http.get(this.serviceUrl)
-      .map(response => response)
-  }
-}
-```
-
-## Components
-
-- Module.java:
-
-  Bind all the components needed by your application.
+**Note: _On production build all the front end Angular build artifacts will be copied to the `public/ui` folder._**
 
 ## Contributors
 
