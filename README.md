@@ -14,7 +14,7 @@
 
 Run this using [sbt](http://www.scala-sbt.org/).
 
-```
+``` 
 sbt run
 ```
 
@@ -31,7 +31,7 @@ Frontend build steps: [UI README.md](./ui/README.md)
 ├── /logs/                      # Logs folder
 │     └── application.log       # Default log file
 ├── /project/                   # Sbt configuration files
-│     ├── **AngularBuild**      # PlayRunHook file to trigger angular serve with sbt run
+│     ├── AngularBuild          # PlayRunHook file to trigger angular serve with sbt run
 │     ├── build.properties      # Marker for sbt project 
 │     └── plugins.sbt           # Sbt plugins declaration
 ├── /public/                    # Public assets
@@ -43,7 +43,7 @@ Frontend build steps: [UI README.md](./ui/README.md)
 │     ├── /e2e/                 # End to end tests folder
 │     ├── /node_modules/        # 3rd-party frontend libraries and utilities
 │     ├── /src/                 # The frontend source code (modules, componensts, models, directives, services etc.) of the application
-│     ├── angular-cli.json      # Builds the project from source to output(lib and bower) folder
+│     ├── .angular-cli.json     # Builds the project from source to output(lib and bower) folder
 │     ├── .editorconfig         # Define and maintain consistent coding styles between different editors and IDEs
 │     ├── .gitignore            # Contains ui files to be ignored when pushing to git
 │     ├── karma.conf.js         # Karma configuration file
@@ -57,7 +57,7 @@ Frontend build steps: [UI README.md](./ui/README.md)
 ├── build.sbt                   # Play application build script
 ├── LICENSE                     # Contains License Agreement file
 ├── README.md                   # Contains all user guide details for the application
-└── **ui-build.sbt**            # UI build scripts
+└── ui-build.sbt                # UI build scripts
 ```
 
 ## Controllers
@@ -73,6 +73,13 @@ There are several demonstration files available in this template.
 - Module.java:
 
   Shows how to use Guice to bind all the components needed by your application.
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars2.githubusercontent.com/u/6312524?s=400&u=efc9267c6f903c379fafaaf7b3b0d9a939474c01&v=4" width="100px;"/><br /><sub>Lahiru Jayamanna</sub>](https://github.com/lahiruz)<br />| [<img src="https://avatars2.githubusercontent.com/u/5279079?s=400&v=4" width="100px;"/><br /><sub>Yohan Shamika Gomez</sub>](https://github.com/yohangz)| [<img src="https://avatars0.githubusercontent.com/u/3881403?s=400&v=4" width="100px;"/><br /><sub>Gayan Kavindra Attygalla</sub>](https://github.com/Arty26)| [<img src="https://avatars0.githubusercontent.com/u/24251976?s=400&v=4" width="100px;"/><br /><sub>Anuradha Gunasekara</sub>](https://github.com/sanuradhag)|
+| :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 
