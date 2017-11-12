@@ -9,9 +9,9 @@
 
 ## Used Versions
 
-* Play Framework: 2.6.7
-* Angular: 5.0.0
-* Angular CLI: 1.5.0
+* [Play Framework: 2.6.7](https://www.playframework.com/documentation/2.6.x/Home)
+* [Angular: 5.0.0](https://angular.io/)
+* [Angular CLI: 1.5.0](https://cli.angular.io/)
 
 ## How to use it? 
 
@@ -21,10 +21,18 @@
 
 ### Let's get started,
 
-* Run this using [sbt](http://www.scala-sbt.org/).
+* The following sbt commands are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
 ``` 
-sbt run
+    sbt clean           # Clear existing build files.
+    
+    sbt stage           # Build your application from your project’s source directory
+    
+    sbt run             # Run both backend and frontend builds in watch mode
+    
+    sbt dist            # Build both backend and frontend sources into a single distribution
+    
+    sbt test            # Run both backend and frontend unit tests 
 ```
 
 ## Complete Directory Layout
@@ -80,16 +88,26 @@ sbt run
 
 ### ui-build.sbt
 
-* `ui-build.sbt` file to represent UI builds scrips implementations to run along with the available sbt commands in the root level of teh project.
+* `ui-build.sbt` file to represent UI builds scrips implementations to run along with the available sbt commands.
+* This file is located in the root level of the project to work smoothly with the `build.sbt` file.
 
 ### npm run commands
 
-* Added several new npm run commands in order to work smoothly with the sbt commands.
-* Available front end build commands can be seen via [UI README.md](./ui/README.md).
+* Added several new npm run commands in the `scripts` section of the package.json file in order to work smoothly with the sbt commands.
+* Check [UI README.md](./ui/README.md) to see the available front end build tasks.
 
 ```
 ├── /ui/                       
 │     ├── package.json          
+```
+
+### proxy.conf.json
+
+* Contains proxy configurations required to run application in watch mode along with both `Java` and `Angular` builds.
+
+```
+├── /ui/                       
+│     ├── proxy.conf.json          
 ```
 
 ## Controllers
@@ -104,7 +122,7 @@ There are several demonstration files available in this template.
 
 - Module.java:
 
-  Shows how to use Guice to bind all the components needed by your application.
+  Bind all the components needed by your application.
 
 ## Contributors
 
