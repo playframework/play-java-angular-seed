@@ -5,7 +5,7 @@
 # Load Angular index page
 GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
 
-GET        /test         controllers.HomeController.index()
+GET        /summary         controllers.HomeController.appSummary()
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /*file        controllers.Assets.versioned(path="/public/ui", file: Asset)
