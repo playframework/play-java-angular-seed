@@ -2,7 +2,13 @@
 
 # :copyright: java-play-angular-seed
 
-> Java Play 2.6.x + Angular 5 with Angular CLI seed project with full-fledged build process
+> java-play-angular-seed project illustrates how Play Framework can be used to develop backend/services along with AngularJs to develop the front-end/ui. This is a totally integrated Java Play 2.6.x + Angular 5 with Angular CLI seed project with full-fledged build process.
+
+## Used Versions
+
+* Play Framework: 2.6.7
+* Angular: 5.0.0
+* Angular CLI: 1.5.0
 
 ## Running
 
