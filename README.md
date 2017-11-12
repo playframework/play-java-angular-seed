@@ -125,7 +125,7 @@ There are several demonstration files available in this template.
 
 ```
 ├── /conf/      
-│     └── routes 
+│     ├── routes 
 ```
 
 * All the route definitions should be included in this file based on higher priority first. In this example project following route is added to retrieve the summary.
@@ -138,9 +138,9 @@ GET        /summary         controllers.HomeController.appSummary()
 
 ```
 ├── /ui/      
-│     └── src 
-│          └── app 
-│               └── app.service.ts 
+│     ├── /src/ 
+│     │     ├── /app/ 
+│     │     │     ├── app.service.ts 
 ```
 
 ```javascript
