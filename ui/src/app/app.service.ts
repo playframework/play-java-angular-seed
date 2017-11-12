@@ -15,7 +15,7 @@ export class AppService {
   }
 
   /**
-   * Makes a http get request to retrieve the welcome message.
+   * Makes a http get request to retrieve the welcome message from the backend service.
    */
   public getWelcomeMessage() {
     return this.http.get(this.serviceUrl)

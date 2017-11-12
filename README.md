@@ -120,15 +120,35 @@ There are several demonstration files available in this template.
   
 ## Routes
 
-All the route definitions should be included in this file based on higher priority first. In this example project following route is added to retrieve the summary.
+```
+├── /conf/      
+│     └── routes 
+```
+
+* All the route definitions should be included in this file based on higher priority first. In this example project following route is added to retrieve the summary.
 
 ```
 GET        /summary         controllers.HomeController.appSummary()
 ```
 
-```
-├── /conf/      
-│     └── routes 
+* The below service is there in the front-end to manage the http requests which defined in the backend service.
+
+```javascript
+@Injectable()
+export class AppService {
+  private serviceUrl = '/summary';
+
+  constructor(private http: HttpClient) {
+  }
+
+  /**
+   * Makes a http get request to retrieve the welcome message from the backend service.
+   */
+  public getWelcomeMessage() {
+    return this.http.get(this.serviceUrl)
+      .map(response => response)
+  }
+}
 ```
 
 ## Components
