@@ -5,6 +5,7 @@
 # Load Angular index page
 GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
 
+# An example route
 GET        /summary         controllers.HomeController.appSummary()
 
 # Map static resources from the /public folder to the /assets URL path
