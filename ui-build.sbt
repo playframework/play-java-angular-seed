@@ -1,61 +1,76 @@
 import scala.sys.process.Process
 
 /*
- * UI Build Scripts
+ * UI Build hook Scripts
  */
-val Success = 0 // 0 exit code
-val Error = 1 // 1 exit code
 
+// Execution status success.
+val Success = 0
+
+// Execution status failure.
+val Error = 1
+
+// Run angular serve task when Play runs in dev mode, that is, when using 'sbt run'
+// https://www.playframework.com/documentation/2.6.x/SBTCookbook
 PlayKeys.playRunHooks += baseDirectory.map(AngularBuild.apply).value
 
+// True if build running operating system is windows.
 val isWindows = System.getProperty("os.name").toLowerCase().contains("win")
 
-def runScript(script: String)(implicit dir: File): Int = {
+// Execute on commandline, depending on the operating system. Used to execute npm commands.
+def runOnCommandline(script: String)(implicit dir: File): Int = {
   if(isWindows){ Process("cmd /c " + script, dir) } else { Process(script, dir) } }!
 
-def uiWasInstalled(implicit dir: File): Boolean = (dir / "node_modules").exists()
+// Check of node_modules directory exist in given directory.
+def isNodeModulesInstalled(implicit dir: File): Boolean = (dir / "node_modules").exists()
 
+// Execute `npm install` command to install all node module dependencies. Return Success if already installed.
 def runNpmInstall(implicit dir: File): Int =
-  if (uiWasInstalled) Success else runScript("npm install")
+  if (isNodeModulesInstalled) Success else runOnCommandline("npm install")
 
-def ifUiInstalled(task: => Int)(implicit dir: File): Int =
+// Execute task if node modules are installed, else return Error status.
+def ifNodeModulesInstalled(task: => Int)(implicit dir: File): Int =
   if (runNpmInstall == Success) task
   else Error
 
-// Include UI production build task here.
-def runProdBuild(implicit dir: File): Int = ifUiInstalled(runScript("npm run build-prod"))
+// Execute frontend dev build task. Update to change the frontend dev build task.
+def executeDevBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline("npm run build-dev"))
 
-// Include UI development build task here.
-def runDevBuild(implicit dir: File): Int = ifUiInstalled(runScript("npm run build-dev"))
+// Execute frontend test task. Update to change the frontend test task.
+def executeUiTests(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline("npm run test-no-watch"))
 
-// Include UI test build task here.
-def runUiTests(implicit dir: File): Int = ifUiInstalled(runScript("npm run test-no-watch"))
+// Execute frontend prod build task. Update to change the frontend prod build task.
+def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline("npm run build-prod"))
+
+
+// Create frontend build tasks for prod, dev and test execution.
 
 lazy val `ui-dev-build` = TaskKey[Unit]("Run UI build when developing the application.")
 
 `ui-dev-build` := {
   implicit val userInterfaceRoot = baseDirectory.value / "ui"
-  if (runDevBuild != Success) throw new Exception("Oops! UI Build crashed.")
-}
-
-lazy val `ui-prod-build` = TaskKey[Unit]("Run UI build when packaging the application.")
-
-`ui-prod-build` := {
-  implicit val userInterfaceRoot = baseDirectory.value / "ui"
-  if (runProdBuild != Success) throw new Exception("Oops! UI Build crashed.")
+  if (executeDevBuild != Success) throw new Exception("Oops! UI Build crashed.")
 }
 
 lazy val `ui-test` = TaskKey[Unit]("Run UI tests when testing application.")
 
 `ui-test` := {
   implicit val userInterfaceRoot = baseDirectory.value / "ui"
-  if (runUiTests != Success) throw new Exception("UI tests failed!")
+  if (executeUiTests != Success) throw new Exception("UI tests failed!")
 }
 
-`ui-test` := (`ui-test` dependsOn `ui-dev-build`).value
+lazy val `ui-prod-build` = TaskKey[Unit]("Run UI build when packaging the application.")
 
+`ui-prod-build` := {
+  implicit val userInterfaceRoot = baseDirectory.value / "ui"
+  if (executeProdBuild != Success) throw new Exception("Oops! UI Build crashed.")
+}
+
+// Execute frontend prod build task prior to play dist execution.
 dist := (dist dependsOn `ui-prod-build`).value
 
+// Execute frontend prod build task prior to play stage execution.
 stage := (stage dependsOn `ui-prod-build`).value
 
+// Execute frontend test task prior to play test execution.
 test := ((test in Test) dependsOn `ui-test`).value
