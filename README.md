@@ -1,4 +1,3 @@
-[![Build Status][build-badge]][build]
 [![MIT License][license-badge]][LICENSE]
 
 # :copyright: java-play-angular-seed
@@ -178,8 +177,6 @@ export class AppService {
 
 This software is licensed under the MIT license
 
-[build-badge]: https://travis-ci.org/yohangz/java-play-angular-seed.svg
-[build]: https://travis-ci.org/yohangz/java-play-angular-seed
 [license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license]: https://github.com/yohangz/java-play-angular-seed/blob/master/LICENSE
 
