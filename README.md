@@ -22,6 +22,8 @@
 
 * Clone the application and open application as a sbt project.
 
+* This application is not using any of the java play views and all the views are served by the [Angular](https://angular.io/) code base which is inside the `ui` folder.
+
 * Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
 ``` 
