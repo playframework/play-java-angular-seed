@@ -21,10 +21,12 @@
 
 ### Let's get started,
 
-* The following sbt commands are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
+* Clone the application and open application as a sbt project.
+
+* Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
 ``` 
-    sbt clean           # Clear existing build files.
+    sbt clean           # Clear existing build files
     
     sbt stage           # Build your application from your project’s source directory
     
@@ -54,6 +56,7 @@
 ├── /target/                    # Generated stuff
 │     ├── /universal/           # Application packaging
 │     └── /web/                 # Compiled web assets
+├── /test/                      # Contains unit tests for java play sources
 ├── /ui/                        # Angular front end sources
 │     ├── /e2e/                 # End to end tests folder
 │     ├── /node_modules/        # 3rd-party frontend libraries and utilities
