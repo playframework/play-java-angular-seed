@@ -9,4 +9,4 @@ GET        /             controllers.Assets.at(path="/public/ui", file="index.ht
 GET        /summary         controllers.HomeController.appSummary()
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /*file        controllers.Assets.versioned(path="/public/ui", file: Asset)
+GET        /*file        controllers.Assets.at(path="/public/ui", file)
