@@ -37,7 +37,7 @@ Read more @ http://bit.ly/2AStvhK
 ## Complete Directory Layout
 
 ```
-├── /app/                        # The backend (java/scala) application sources (controllers, models, views, assets)
+├── /app/                        # The backend (java) application sources (controllers, models, views, assets)
 ├── /conf/                       # Configurations files and other non-compiled resources (on classpath)
 │     ├── application.conf       # Builds the project from source to output(lib and bower) folder
 │     ├── logback.xml            # Logging configuration
