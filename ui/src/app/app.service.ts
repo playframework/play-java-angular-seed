@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 /**
  * Class representing application service.
@@ -19,6 +19,6 @@ export class AppService {
    */
   public getWelcomeMessage() {
     return this.http.get(this.serviceUrl)
-      .map(response => response)
+      .map(response => response);
   }
 }

@@ -11,19 +11,23 @@ const routes: Routes = [
   {
     path: 'java',
     component: RouteExampleComponent,
-    data: { technology: 'Java' }
+    data: {technology: 'Java'}
   },
   {
     path: 'play',
     component: RouteExampleComponent,
-    data: { technology: 'Play' }
+    data: {technology: 'Play'}
   },
   {
     path: 'angular',
     component: RouteExampleComponent,
-    data: { technology: 'Angular' }
+    data: {technology: 'Angular'}
   },
-  { path: '',   redirectTo: '/play', pathMatch: 'full' }
+  {
+    path: '**',
+    redirectTo: '/play',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -34,9 +38,10 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes)
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
