@@ -20,7 +20,6 @@ Read more @ http://bit.ly/2AStvhK
 
 * [Node.js](https://nodejs.org/)
 * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [scala](https://www.scala-lang.org/download/)
 
 ### Let's get started,
 
