@@ -6,7 +6,7 @@
 
 Read more @ http://bit.ly/2AStvhK
 
-[![Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed/blob/master/angular.png)](http://bit.ly/2AStvhK)
+[![Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed/blob/master/angular.png)](http://bit.ly/2AStvhK) [![Greenkeeper badge](https://badges.greenkeeper.io/yohangz/java-play-angular-seed.svg)](https://greenkeeper.io/)
 
 ## Used Versions
 
