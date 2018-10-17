@@ -34,14 +34,12 @@ export class AppHttpInterceptorService implements HttpInterceptor {
     const clientErrorMessage = this.handleClientSideError(response.status);
     if (clientErrorMessage) {
       // show client side error
-      console.log(clientErrorMessage);
       return;
     }
 
     const serverErrorMessage = this.handleServerError(response.error);
     if (serverErrorMessage) {
       // show server error
-      console.log(serverErrorMessage);
     }
   }
 
