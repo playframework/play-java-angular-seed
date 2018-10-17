@@ -26,4 +26,9 @@ public class HomeController extends Controller {
         JsonNode jsonNode = Json.toJson(new AppSummary("Java Play Angular Seed"));
         return ok(jsonNode).as("application/json");
     }
+
+    public Result postTest() {
+        JsonNode jsonNode = Json.toJson(new AppSummary("Post Request Test => Data Sending Success"));
+        return ok(jsonNode).as("application/json");
+    }
 }
