@@ -7,7 +7,7 @@ import scala.sys.process.Process
 
 /**
   * Frontend build play run hook.
-  * https://www.playframework.com/documentation/2.6.x/SBTCookbook
+  * https://www.playframework.com/documentation/2.7.x/SBTCookbook
   */
 object FrontendRunHook {
   def apply(base: File): PlayRunHook = {
@@ -39,7 +39,7 @@ object FrontendRunHook {
         * Executed after play run start.
         * Run npm start
         */
-      override def afterStarted(): Unit = {
+      override def afterStarted(addr: InetSocketAddress): Unit = {
         process = Option(
           Process(run, base / "ui").run
         )
