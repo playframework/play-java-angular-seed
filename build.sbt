@@ -3,7 +3,7 @@ name := """java-play-angular-seed"""
 version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava).settings(
-  watchSources ++= (baseDirectory.value / "public/ui" ** "*").get
+  watchSources ++= (baseDirectory.value / "ui/src" ** "*").get
 )
 
 scalaVersion := "2.12.8"
