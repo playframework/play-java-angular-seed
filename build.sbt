@@ -18,4 +18,4 @@ libraryDependencies += "org.assertj" % "assertj-core" % "3.22.0" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "4.2.0" % Test
 
 // Make verbose tests
-testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+(Test / testOptions) := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
