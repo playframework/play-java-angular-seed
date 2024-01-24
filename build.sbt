@@ -14,7 +14,7 @@ libraryDependencies += guice
 libraryDependencies += "com.h2database" % "h2" % "2.2.224"
 
 // Testing libraries for dealing with CompletionStage...
-libraryDependencies += "org.assertj" % "assertj-core" % "3.25.1" % Test
+libraryDependencies += "org.assertj" % "assertj-core" % "3.25.2" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "4.2.0" % Test
 
 // Make verbose tests
