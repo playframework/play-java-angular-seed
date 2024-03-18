@@ -15,7 +15,7 @@ libraryDependencies += "com.h2database" % "h2" % "2.2.224"
 
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.25.3" % Test
-libraryDependencies += "org.awaitility" % "awaitility" % "4.2.0" % Test
+libraryDependencies += "org.awaitility" % "awaitility" % "4.2.1" % Test
 
 // Make verbose tests
 (Test / testOptions) := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
