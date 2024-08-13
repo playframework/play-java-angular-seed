@@ -11,7 +11,7 @@ scalaVersion := "2.13.14"
 libraryDependencies += guice
 
 // Test Database
-libraryDependencies += "com.h2database" % "h2" % "2.3.230"
+libraryDependencies += "com.h2database" % "h2" % "2.3.232"
 
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.26.3" % Test
