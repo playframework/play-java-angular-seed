@@ -6,7 +6,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava).settings(
   watchSources ++= (baseDirectory.value / "ui/src" ** "*").get
 )
 
-scalaVersion := "2.13.15"
+scalaVersion := "2.13.16"
 
 libraryDependencies += guice
 
